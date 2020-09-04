@@ -13,8 +13,17 @@
     <meta name="description" content="">
     <meta property="og:description" content="">
     <meta property="og:image" content="">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    
+    <style>
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Abril Fatface', cursive;
+      }
+    </style>
   </head>
   <body>
+    <h1>jj.now</h1>
     <p>This is an example paragraph. Anything in the <strong>body</strong> tag will appear on the page, just like this <strong>p</strong> tag and its contents.</p>
     <img src="/o.gif" alt="o">
     <a href="/o">O smiley</a>
@@ -28,7 +37,12 @@
           htmlString += `<li><a href="${file.path}">${file.name}</a><img src="${file.download_url}" /></li>`;
         }
         htmlString += '</ul>';
-        document.getElementsByTagName('body')[0].innerHTML = htmlString;
+//         document.getElementsByTagName('body')[0].innerHTML = htmlString;
+        
+        var elemDiv = document.createElement('div');
+//         elemDiv.style.cssText = 'position:absolute;width:100%;height:100%;opacity:0.3;z-index:100;background:#000;';
+        elemDiv.innerHTML = htmlString;
+        document.body.appendChild(elemDiv);
       })()
     </script>
     
